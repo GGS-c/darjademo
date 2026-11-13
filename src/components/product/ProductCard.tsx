@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Heart, Plus } from 'lucide-react';
@@ -24,8 +24,19 @@ export function ProductCard({ product }: ProductCardProps) {
   const isFavorited = isInWishlist(product.id);
   const activeVariant = product.variants[activeVariantIndex] || product.variants[0];
 
-  const primaryImage = activeVariant.images[0];
-  const secondaryImage = activeVariant.images[1] || primaryImage;
+  const [primaryErr, setPrimaryErr] = useState(false);
+  const [secondaryErr, setSecondaryErr] = useState(false);
+
+  useEffect(() => {
+    setPrimaryErr(false);
+    setSecondaryErr(false);
+  }, [activeVariantIndex]);
+
+  const rawPrimary = activeVariant.images[0] || '/images/fallback.jpg';
+  const rawSecondary = activeVariant.images[1] || rawPrimary;
+
+  const primaryImage = primaryErr ? '/images/fallback.jpg' : rawPrimary;
+  const secondaryImage = secondaryErr ? '/images/fallback.jpg' : rawSecondary;
 
   const handleQuickAdd = (size: 'S' | 'M' | 'L' | 'XL' | 'XXL', e: React.MouseEvent) => {
     e.preventDefault();
@@ -63,6 +74,7 @@ export function ProductCard({ product }: ProductCardProps) {
                 ? 'opacity-0 scale-105'
                 : 'opacity-100 scale-100'
             }`}
+            onError={() => setPrimaryErr(true)}
           />
           {secondaryImage && secondaryImage !== primaryImage && (
             <Image
@@ -73,6 +85,7 @@ export function ProductCard({ product }: ProductCardProps) {
               className={`object-cover object-center transition-all duration-700 ease-out absolute inset-0 ${
                 isHovered ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
               }`}
+              onError={() => setSecondaryErr(true)}
             />
           )}
         </Link>

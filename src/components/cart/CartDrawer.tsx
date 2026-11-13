@@ -122,7 +122,7 @@ export function CartDrawer() {
                   onClick={closeCart}
                   className="relative w-20 h-26 bg-stone-100 rounded overflow-hidden shrink-0 aspect-[3/4]"
                 >
-                  <Image src={item.image} alt={item.name} fill className="object-cover" />
+                  <Image src={item.image || '/images/fallback.jpg'} alt={item.name} fill className="object-cover" />
                 </Link>
 
                 {/* Details */}

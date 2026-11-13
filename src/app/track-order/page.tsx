@@ -215,7 +215,7 @@ function TrackOrderContent() {
                   {searchedOrder.items.map((it) => (
                     <div key={it.id} className="flex gap-3 items-center">
                       <div className="relative w-10 h-14 bg-stone-200 rounded overflow-hidden shrink-0 aspect-[3/4]">
-                        <Image src={it.image} alt={it.name} fill className="object-cover" />
+                        <Image src={it.image || '/images/fallback.jpg'} alt={it.name} fill className="object-cover" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="font-semibold text-black truncate">{it.name}</p>

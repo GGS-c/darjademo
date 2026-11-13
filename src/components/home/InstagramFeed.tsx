@@ -6,22 +6,22 @@ import { Instagram } from 'lucide-react';
 
 const COMMUNITY_POSTS = [
   {
-    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=600',
+    image: '/images/banners/lookbook-1.jpg',
     handle: '@arjun.mehta',
     product: 'Minimalist Oxford Shirt',
   },
   {
-    image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600',
+    image: '/images/banners/lookbook-2.jpg',
     handle: '@kabir_v',
     product: 'Phantom 260 GSM Heavy Tee',
   },
   {
-    image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=600',
+    image: '/images/banners/lookbook-3.jpg',
     handle: '@rohan_style',
     product: 'Tokyo Pleated Trousers',
   },
   {
-    image: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=600',
+    image: '/images/banners/lookbook-4.jpg',
     handle: '@dev.sharma',
     product: 'Textured Waffle Overshirt',
   },

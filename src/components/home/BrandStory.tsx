@@ -63,7 +63,7 @@ export function BrandStory() {
           <div className="lg:col-span-5 grid grid-cols-2 gap-4">
             <div className="relative aspect-[3/4] rounded-md overflow-hidden bg-stone-900">
               <Image
-                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop"
+                src="/images/banners/brand-story-1.jpg"
                 alt="Darja menswear portrait"
                 fill
                 className="object-cover"
@@ -71,7 +71,7 @@ export function BrandStory() {
             </div>
             <div className="relative aspect-[3/4] rounded-md overflow-hidden bg-stone-900 translate-y-6">
               <Image
-                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop"
+                src="/images/banners/brand-story-2.jpg"
                 alt="Darja editorial styling"
                 fill
                 className="object-cover"

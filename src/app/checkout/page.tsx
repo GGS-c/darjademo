@@ -141,7 +141,7 @@ export default function CheckoutPage() {
                 {confirmedOrder.items.map((item) => (
                   <div key={item.id} className="p-3.5 flex gap-3 items-center">
                     <div className="relative w-14 h-18 bg-stone-100 rounded overflow-hidden shrink-0 aspect-[3/4]">
-                      <Image src={item.image} alt={item.name} fill className="object-cover" />
+                      <Image src={item.image || '/images/fallback.jpg'} alt={item.name} fill className="object-cover" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <h5 className="text-xs font-bold text-black truncate">{item.name}</h5>
@@ -497,7 +497,7 @@ export default function CheckoutPage() {
                 {cart.map((item) => (
                   <div key={item.id} className="flex gap-3 items-center text-xs">
                     <div className="relative w-12 h-16 bg-stone-100 rounded overflow-hidden shrink-0 aspect-[3/4]">
-                      <Image src={item.image} alt={item.name} fill className="object-cover" />
+                      <Image src={item.image || '/images/fallback.jpg'} alt={item.name} fill className="object-cover" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <h5 className="font-semibold text-black truncate">{item.name}</h5>

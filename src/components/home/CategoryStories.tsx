@@ -8,47 +8,47 @@ const STORIES = [
   {
     name: 'Oversized Tees',
     slug: 'oversized-t-shirts',
-    image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=400',
+    image: '/images/categories/story-oversized-tees.jpg',
     badge: 'Trending',
   },
   {
     name: 'Plain Shirts',
     slug: 'plain-shirts',
-    image: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=400',
+    image: '/images/categories/story-plain-shirts.jpg',
     badge: 'Popular',
   },
   {
     name: 'Parachute Cargos',
     slug: 'cargo-pants',
-    image: 'https://images.unsplash.com/photo-1517445312882-bc9910d016b7?q=80&w=400',
+    image: '/images/categories/story-parachute-cargos.jpg',
     badge: 'Hot',
   },
   {
     name: 'Baggy Jeans',
     slug: 'jeans',
-    image: 'https://images.unsplash.com/photo-1542272604-780c96856592?q=80&w=400',
+    image: '/images/categories/story-baggy-jeans.jpg',
     badge: 'New',
   },
   {
     name: 'Pleated Pants',
     slug: 'trousers',
-    image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=400',
+    image: '/images/categories/story-pleated-pants.jpg',
     badge: 'Editorial',
   },
   {
     name: 'Knit Polos',
     slug: 'polo-t-shirts',
-    image: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=400',
+    image: '/images/categories/story-knit-polos.jpg',
   },
   {
     name: 'Flannel Checks',
     slug: 'checks-shirts',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400',
+    image: '/images/categories/story-flannel-checks.jpg',
   },
   {
     name: 'Linen Resort',
     slug: 'shorts',
-    image: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?q=80&w=400',
+    image: '/images/categories/story-linen-resort.jpg',
   },
 ];
 

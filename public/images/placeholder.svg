@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141416" />
+      <stop offset="50%" stop-color="#1d1d20" />
+      <stop offset="100%" stop-color="#0d0d0f" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#9ca3af" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#bg)" />
+  <circle cx="300" cy="360" r="140" fill="none" stroke="#27272a" stroke-width="2" stroke-dasharray="6 6" />
+  <path d="M 260 330 L 300 290 L 340 330 L 300 370 Z" fill="none" stroke="url(#gold)" stroke-width="2.5" />
+  <path d="M 285 365 L 300 380 L 315 365" fill="none" stroke="url(#gold)" stroke-width="2" />
+  <text x="300" y="440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="900" letter-spacing="8" fill="#ffffff" text-anchor="middle">DARJA</text>
+  <text x="300" y="470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" letter-spacing="6" fill="#a1a1aa" text-anchor="middle">MENS WEAR</text>
+  <text x="300" y="520" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" letter-spacing="3" fill="#71717a" text-anchor="middle">ATELIER COLLECTION</text>
+</svg>

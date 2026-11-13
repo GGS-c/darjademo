@@ -154,7 +154,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                       >
                         <div className="relative w-16 h-20 bg-stone-100 rounded overflow-hidden shrink-0">
                           <Image
-                            src={firstVariant.images[0]}
+                            src={firstVariant.images[0] || '/images/fallback.jpg'}
                             alt={product.name}
                             fill
                             className="object-cover group-hover:scale-105 transition-transform"

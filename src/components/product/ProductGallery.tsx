@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Maximize2, X } from 'lucide-react';
 
@@ -14,8 +14,21 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
   const [isZoomed, setIsZoomed] = useState(false);
   const [zoomPosition, setZoomPosition] = useState({ x: 0, y: 0 });
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [imageErrorMap, setImageErrorMap] = useState<Record<number, boolean>>({});
 
-  const activeImage = images[selectedImageIndex] || images[0];
+  // Reset selected image when images array changes (e.g. user selects another color variant)
+  useEffect(() => {
+    setSelectedImageIndex(0);
+    setImageErrorMap({});
+  }, [images]);
+
+  const validImages = images && images.length > 0 ? images : ['/images/fallback.jpg'];
+  const rawActiveImage = validImages[selectedImageIndex] || validImages[0];
+  const activeImage = imageErrorMap[selectedImageIndex] ? '/images/fallback.jpg' : rawActiveImage;
+
+  const handleImageError = (index: number) => {
+    setImageErrorMap((prev) => ({ ...prev, [index]: true }));
+  };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
@@ -28,19 +41,28 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
     <div className="flex flex-col-reverse lg:flex-row gap-4">
       {/* Thumbnails strip */}
       <div className="flex lg:flex-col gap-2.5 overflow-x-auto lg:overflow-y-auto no-scrollbar pb-2 lg:pb-0 shrink-0">
-        {images.map((img, idx) => (
-          <button
-            key={idx}
-            onClick={() => setSelectedImageIndex(idx)}
-            className={`relative w-16 h-20 sm:w-20 sm:h-26 rounded overflow-hidden bg-stone-100 transition-all shrink-0 ${
-              idx === selectedImageIndex
-                ? 'ring-2 ring-black ring-offset-1 opacity-100'
-                : 'opacity-60 hover:opacity-100'
-            }`}
-          >
-            <Image src={img} alt={`${productName} thumbnail ${idx + 1}`} fill className="object-cover" />
-          </button>
-        ))}
+        {validImages.map((img, idx) => {
+          const displayThumb = imageErrorMap[idx] ? '/images/fallback.jpg' : img;
+          return (
+            <button
+              key={`${idx}-${img}`}
+              onClick={() => setSelectedImageIndex(idx)}
+              className={`relative w-16 h-20 sm:w-20 sm:h-26 rounded overflow-hidden bg-stone-100 transition-all shrink-0 ${
+                idx === selectedImageIndex
+                  ? 'ring-2 ring-black ring-offset-1 opacity-100'
+                  : 'opacity-60 hover:opacity-100'
+              }`}
+            >
+              <Image
+                src={displayThumb}
+                alt={`${productName} thumbnail ${idx + 1}`}
+                fill
+                className="object-cover"
+                onError={() => handleImageError(idx)}
+              />
+            </button>
+          );
+        })}
       </div>
 
       {/* Main Large Display with Interactive Zoom */}
@@ -67,6 +89,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
                   }
                 : undefined
             }
+            onError={() => handleImageError(selectedImageIndex)}
           />
         </div>
 
@@ -81,7 +104,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
 
         {/* Image Counter */}
         <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-md text-white text-[10px] font-mono font-semibold px-2.5 py-1 rounded-full">
-          {selectedImageIndex + 1} / {images.length}
+          {selectedImageIndex + 1} / {validImages.length}
         </div>
       </div>
 
@@ -95,7 +118,13 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
             <X className="w-6 h-6" />
           </button>
           <div className="relative w-full max-w-3xl h-[85vh]">
-            <Image src={activeImage} alt={productName} fill className="object-contain" />
+            <Image
+              src={activeImage}
+              alt={productName}
+              fill
+              className="object-contain"
+              onError={() => handleImageError(selectedImageIndex)}
+            />
           </div>
         </div>
       )}

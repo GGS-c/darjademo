@@ -109,7 +109,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
           color: variant.colorName,
           size: size,
           quantity: Math.min(quantity, maxStock),
-          image: variant.images[0] || 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=800',
+          image: variant.images[0] || '/images/fallback.jpg',
           maxStock: maxStock,
         };
         return [newItem, ...prevCart];

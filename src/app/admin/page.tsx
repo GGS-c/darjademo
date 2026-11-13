@@ -45,7 +45,7 @@ export default function AdminDashboardPage() {
   const [newProdOriginalPrice, setNewProdOriginalPrice] = useState(2499);
   const [newProdColor, setNewProdColor] = useState('Obsidian Black');
   const [newProdImage, setNewProdImage] = useState(
-    'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=1000'
+    '/images/products/darja-sh-01-black-1.jpg'
   );
 
   // Discounts state
@@ -396,13 +396,13 @@ export default function AdminDashboardPage() {
 
                   <div>
                     <label className="text-stone-400 font-bold uppercase tracking-wider block mb-1">
-                      Image URL (Unsplash or Cloudinary)
+                      Image Path or URL (/images/products/... or CDN)
                     </label>
                     <input
                       type="text"
                       value={newProdImage}
                       onChange={(e) => setNewProdImage(e.target.value)}
-                      placeholder="https://images.unsplash.com/..."
+                      placeholder="/images/products/darja-sh-01-black-1.jpg"
                       className="w-full px-3 py-2 bg-stone-900 border border-stone-700 rounded text-white font-mono text-[11px]"
                     />
                   </div>
@@ -453,7 +453,7 @@ export default function AdminDashboardPage() {
                             <div className="flex items-center gap-3">
                               <div className="relative w-12 h-16 bg-stone-900 rounded overflow-hidden shrink-0 aspect-[3/4]">
                                 <Image
-                                  src={p.variants[0]?.images[0]}
+                                  src={p.variants[0]?.images[0] || '/images/fallback.jpg'}
                                   alt={p.name}
                                   fill
                                   className="object-cover"
@@ -646,7 +646,7 @@ export default function AdminDashboardPage() {
                   <div className="flex gap-3 items-center">
                     <div className="relative w-12 h-16 bg-stone-900 rounded overflow-hidden aspect-[3/4]">
                       <Image
-                        src={product.variants[0]?.images[0]}
+                        src={product.variants[0]?.images[0] || '/images/fallback.jpg'}
                         alt={product.name}
                         fill
                         className="object-cover"

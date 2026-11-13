@@ -16,7 +16,7 @@ export function EditorialSplit() {
             className="group relative h-[420px] sm:h-[520px] overflow-hidden rounded-md bg-stone-900 block"
           >
             <Image
-              src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=1200&auto=format&fit=crop"
+              src="/images/banners/editorial-oversized.jpg"
               alt="Oversized Boxy Silhouette"
               fill
               className="object-cover object-center filter brightness-[0.8] transition-transform duration-700 ease-out group-hover:scale-105"
@@ -44,7 +44,7 @@ export function EditorialSplit() {
             className="group relative h-[420px] sm:h-[520px] overflow-hidden rounded-md bg-stone-900 block"
           >
             <Image
-              src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1200&auto=format&fit=crop"
+              src="/images/banners/editorial-bottomwear.jpg"
               alt="Tailored & Tactical Bottomwear"
               fill
               className="object-cover object-center filter brightness-[0.8] transition-transform duration-700 ease-out group-hover:scale-105"
