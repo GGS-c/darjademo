@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { formatPrice } from '@/utils/formatters';
+import { DEMO_IMAGES, getSafeImage } from '@/config/images';
 
 export default function CartPage() {
   const {
@@ -124,7 +125,13 @@ export default function CartPage() {
                     href={`/product/${item.slug}`}
                     className="relative w-20 sm:w-24 aspect-[3/4] bg-stone-100 rounded overflow-hidden shrink-0"
                   >
-                    <Image src={item.image || '/images/fallback.jpg'} alt={item.name} fill className="object-cover" />
+                    <Image
+                      src={getSafeImage(item.image) || DEMO_IMAGES.fallback}
+                      alt={item.name}
+                      fill
+                      sizes="96px"
+                      className="object-cover"
+                    />
                   </Link>
 
                   {/* Info */}

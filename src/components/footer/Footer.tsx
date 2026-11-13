@@ -19,7 +19,7 @@ export function Footer() {
     <footer className="bg-black text-white pt-16 pb-12 border-t border-stone-900">
       {/* Brand Pillars Strip */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 border-b border-stone-800">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           <div className="flex items-start gap-4">
             <div className="p-3 bg-stone-900 rounded-lg text-white shrink-0">
               <Truck className="w-6 h-6" />
@@ -138,6 +138,7 @@ export function Footer() {
               <li><Link href="/category/jeans" className="hover:text-white transition-colors">Baggy Jeans</Link></li>
               <li><Link href="/category/trousers" className="hover:text-white transition-colors">Pleated Trousers</Link></li>
               <li><Link href="/category/cargo-pants" className="hover:text-white transition-colors">Cargo Pants</Link></li>
+              <li><Link href="/category/kids" className="text-stone-300 font-semibold hover:text-white transition-colors">Kids & Youth Drop</Link></li>
             </ul>
           </div>
 
@@ -163,7 +164,7 @@ export function Footer() {
         </div>
 
         {/* Accepted Payment Icons */}
-        <div className="flex items-center gap-3 text-stone-400 text-[11px] font-mono">
+        <div className="flex flex-wrap items-center justify-center md:justify-end gap-2 text-stone-400 text-[10px] sm:text-[11px] font-mono">
           <span className="bg-stone-900 px-2 py-1 rounded border border-stone-800">UPI / GPAY</span>
           <span className="bg-stone-900 px-2 py-1 rounded border border-stone-800">VISA</span>
           <span className="bg-stone-900 px-2 py-1 rounded border border-stone-800">MASTERCARD</span>

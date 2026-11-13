@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { CartItem, Product, ProductVariant } from '@/types';
+import { DEMO_IMAGES, getSafeImage } from '@/config/images';
 
 interface CartContextType {
   cart: CartItem[];
@@ -109,7 +110,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
           color: variant.colorName,
           size: size,
           quantity: Math.min(quantity, maxStock),
-          image: variant.images[0] || '/images/fallback.jpg',
+          image: getSafeImage(variant.images[0]) || DEMO_IMAGES.fallback,
           maxStock: maxStock,
         };
         return [newItem, ...prevCart];

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Search, X, ArrowRight, TrendingUp } from 'lucide-react';
 import { PRODUCTS } from '@/data/products';
 import { formatPrice } from '@/utils/formatters';
+import { DEMO_IMAGES, getSafeImage } from '@/config/images';
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -154,9 +155,10 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                       >
                         <div className="relative w-16 h-20 bg-stone-100 rounded overflow-hidden shrink-0">
                           <Image
-                            src={firstVariant.images[0] || '/images/fallback.jpg'}
+                            src={getSafeImage(firstVariant?.images?.[0]) || DEMO_IMAGES.fallback}
                             alt={product.name}
                             fill
+                            sizes="64px"
                             className="object-cover group-hover:scale-105 transition-transform"
                           />
                         </div>

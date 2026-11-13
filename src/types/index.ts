@@ -1,4 +1,4 @@
-export type ProductCategory = 'shirts' | 't-shirts' | 'bottomwear' | 'collections' | 'best-sellers' | 'sale';
+export type ProductCategory = 'shirts' | 't-shirts' | 'bottomwear' | 'kids' | 'collections' | 'best-sellers' | 'sale';
 
 export type ProductSubcategory =
   // Shirts
@@ -21,7 +21,12 @@ export type ProductSubcategory =
   | 'trousers'
   | 'cargo-pants'
   | 'joggers'
-  | 'shorts';
+  | 'shorts'
+  // Kids & Youth
+  | 'kids-wear'
+  | 'kids-shirts'
+  | 'kids-t-shirts'
+  | 'kids-bottomwear';
 
 export interface ProductVariant {
   colorName: string;

@@ -26,6 +26,7 @@ import { MAIN_NAV_CATEGORIES } from '@/data/categories';
 import { useOrders } from '@/context/OrderContext';
 import { formatPrice, formatDate } from '@/utils/formatters';
 import { Product, Order } from '@/types';
+import { DEMO_IMAGES, getSafeImage } from '@/config/images';
 
 type AdminTab = 'overview' | 'products' | 'orders' | 'inventory' | 'discounts' | 'customers';
 
@@ -39,14 +40,12 @@ export default function AdminDashboardPage() {
 
   // New product form state
   const [newProdName, setNewProdName] = useState('');
-  const [newProdCategory, setNewProdCategory] = useState<'shirts' | 't-shirts' | 'bottomwear'>('shirts');
+  const [newProdCategory, setNewProdCategory] = useState<'shirts' | 't-shirts' | 'bottomwear' | 'kids'>('shirts');
   const [newProdSubcategory, setNewProdSubcategory] = useState('oversized-shirts');
   const [newProdPrice, setNewProdPrice] = useState(1499);
   const [newProdOriginalPrice, setNewProdOriginalPrice] = useState(2499);
   const [newProdColor, setNewProdColor] = useState('Obsidian Black');
-  const [newProdImage, setNewProdImage] = useState(
-    '/images/products/darja-sh-01-black-1.jpg'
-  );
+  const [newProdImage, setNewProdImage] = useState<string>(DEMO_IMAGES.shirt);
 
   // Discounts state
   const [coupons, setCoupons] = useState([
@@ -352,6 +351,7 @@ export default function AdminDashboardPage() {
                       <option value="shirts">Shirts</option>
                       <option value="t-shirts">T-Shirts</option>
                       <option value="bottomwear">Bottomwear</option>
+                      <option value="kids">Kids & Youth</option>
                     </select>
                   </div>
 
@@ -402,7 +402,7 @@ export default function AdminDashboardPage() {
                       type="text"
                       value={newProdImage}
                       onChange={(e) => setNewProdImage(e.target.value)}
-                      placeholder="/images/products/darja-sh-01-black-1.jpg"
+                      placeholder="/images/demo/mens-shirt.webp"
                       className="w-full px-3 py-2 bg-stone-900 border border-stone-700 rounded text-white font-mono text-[11px]"
                     />
                   </div>
@@ -453,9 +453,10 @@ export default function AdminDashboardPage() {
                             <div className="flex items-center gap-3">
                               <div className="relative w-12 h-16 bg-stone-900 rounded overflow-hidden shrink-0 aspect-[3/4]">
                                 <Image
-                                  src={p.variants[0]?.images[0] || '/images/fallback.jpg'}
+                                  src={getSafeImage(p.variants[0]?.images[0]) || DEMO_IMAGES.fallback}
                                   alt={p.name}
                                   fill
+                                  sizes="48px"
                                   className="object-cover"
                                 />
                               </div>
@@ -646,9 +647,10 @@ export default function AdminDashboardPage() {
                   <div className="flex gap-3 items-center">
                     <div className="relative w-12 h-16 bg-stone-900 rounded overflow-hidden aspect-[3/4]">
                       <Image
-                        src={product.variants[0]?.images[0] || '/images/fallback.jpg'}
+                        src={getSafeImage(product.variants[0]?.images[0]) || DEMO_IMAGES.fallback}
                         alt={product.name}
                         fill
+                        sizes="48px"
                         className="object-cover"
                       />
                     </div>

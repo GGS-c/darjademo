@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { DEMO_IMAGES } from '@/config/images';
 
 interface Slide {
   id: string;
@@ -23,7 +24,7 @@ const HERO_SLIDES: Slide[] = [
     title: 'THE MONOCHROME STATEMENT',
     subtitle: 'NEW SEASON DROP / SS26',
     tagline: 'DEFINE YOUR STYLE. OWN YOUR PRESENCE.',
-    image: '/images/banners/hero-monochrome.jpg',
+    image: DEMO_IMAGES.banner,
     ctaText: 'EXPLORE NEW DROPS',
     ctaLink: '/category/new-arrivals',
     secondaryCtaText: 'SHOP BEST SELLERS',
@@ -34,7 +35,7 @@ const HERO_SLIDES: Slide[] = [
     title: 'HEAVYWEIGHT OVERSIZED TEES',
     subtitle: '260 GSM FRENCH TERRY ESSENTIALS',
     tagline: 'ARCHITECTURAL BOX-CUT SILHOUETTES THAT HOLD FORM',
-    image: '/images/banners/hero-oversized.jpg',
+    image: DEMO_IMAGES.tshirt,
     ctaText: 'DISCOVER TEES',
     ctaLink: '/category/oversized-t-shirts',
     secondaryCtaText: 'VIEW LOOKBOOK',
@@ -45,7 +46,7 @@ const HERO_SLIDES: Slide[] = [
     title: 'THE REFINED LINEN EDIT',
     subtitle: '100% PURE EUROPEAN FLAX',
     tagline: 'EFFORTLESS LUXURY FOR ELEVATED LIVING',
-    image: '/images/banners/hero-linen.jpg',
+    image: DEMO_IMAGES.shirt,
     ctaText: 'SHOP LINEN SHIRTS',
     ctaLink: '/category/shirts',
     secondaryCtaText: 'EXPLORE ALL',
@@ -56,7 +57,7 @@ const HERO_SLIDES: Slide[] = [
     title: "MEN'S ATELIER COLLECTION",
     subtitle: 'BESPOKE TAILORING & PRECISION CUTS',
     tagline: 'COMMANDING ELEGANCE FOR MODERN GENTLEMEN',
-    image: '/images/banners/mens-collection.jpg',
+    image: DEMO_IMAGES.pants,
     ctaText: "EXPLORE MEN'S EDIT",
     ctaLink: '/category/shirts',
     secondaryCtaText: 'VIEW ALL SUITS & SHIRTS',
@@ -64,12 +65,12 @@ const HERO_SLIDES: Slide[] = [
   },
   {
     id: 'slide-5',
-    title: 'YOUTH & GEN-Z STREET DROP',
+    title: 'KIDS & YOUTH STREET DROP',
     subtitle: 'CONTEMPORARY RAW ATTITUDE',
     tagline: 'BAGGY SILHOUETTES & RELAXED TAILORING',
-    image: '/images/banners/kids-collection.jpg',
-    ctaText: 'SHOP STREETWEAR',
-    ctaLink: '/category/oversized-shirts',
+    image: DEMO_IMAGES.kids,
+    ctaText: 'SHOP KIDS EDIT',
+    ctaLink: '/category/kids',
     secondaryCtaText: 'EXPLORE BOTTOMWEAR',
     secondaryCtaLink: '/category/bottomwear',
   },
@@ -78,7 +79,7 @@ const HERO_SLIDES: Slide[] = [
     title: 'T-SHIRT SIGNATURE CAPSULE',
     subtitle: 'PREMIUM SUPIMA & PUFF PRINTS',
     tagline: 'EVERYDAY REFINEMENT IN PURE COTTON',
-    image: '/images/banners/tshirt-collection.jpg',
+    image: DEMO_IMAGES.tshirt,
     ctaText: 'SHOP T-SHIRTS',
     ctaLink: '/category/t-shirts',
     secondaryCtaText: 'GRAPHIC CAPSULE',
@@ -112,6 +113,7 @@ export function HeroBanner() {
             src={item.image}
             alt={item.title}
             fill
+            sizes="100vw"
             priority={index === 0}
             className="object-cover object-top filter brightness-[0.78]"
           />

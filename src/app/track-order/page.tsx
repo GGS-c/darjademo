@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { useOrders } from '@/context/OrderContext';
 import { formatPrice, formatDate } from '@/utils/formatters';
+import { DEMO_IMAGES, getSafeImage } from '@/config/images';
 
 function TrackOrderContent() {
   const searchParams = useSearchParams();
@@ -215,7 +216,13 @@ function TrackOrderContent() {
                   {searchedOrder.items.map((it) => (
                     <div key={it.id} className="flex gap-3 items-center">
                       <div className="relative w-10 h-14 bg-stone-200 rounded overflow-hidden shrink-0 aspect-[3/4]">
-                        <Image src={it.image || '/images/fallback.jpg'} alt={it.name} fill className="object-cover" />
+                        <Image
+                          src={getSafeImage(it.image) || DEMO_IMAGES.fallback}
+                          alt={it.name}
+                          fill
+                          sizes="40px"
+                          className="object-cover"
+                        />
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="font-semibold text-black truncate">{it.name}</p>

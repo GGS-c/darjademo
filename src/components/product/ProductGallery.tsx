@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Maximize2, X } from 'lucide-react';
+import { DEMO_IMAGES, getSafeImage } from '@/config/images';
 
 interface ProductGalleryProps {
   images: string[];
@@ -22,9 +23,9 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
     setImageErrorMap({});
   }, [images]);
 
-  const validImages = images && images.length > 0 ? images : ['/images/fallback.jpg'];
+  const validImages = images && images.length > 0 ? images.map(getSafeImage) : [DEMO_IMAGES.fallback];
   const rawActiveImage = validImages[selectedImageIndex] || validImages[0];
-  const activeImage = imageErrorMap[selectedImageIndex] ? '/images/fallback.jpg' : rawActiveImage;
+  const activeImage = imageErrorMap[selectedImageIndex] ? DEMO_IMAGES.fallback : rawActiveImage;
 
   const handleImageError = (index: number) => {
     setImageErrorMap((prev) => ({ ...prev, [index]: true }));
@@ -42,7 +43,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
       {/* Thumbnails strip */}
       <div className="flex lg:flex-col gap-2.5 overflow-x-auto lg:overflow-y-auto no-scrollbar pb-2 lg:pb-0 shrink-0">
         {validImages.map((img, idx) => {
-          const displayThumb = imageErrorMap[idx] ? '/images/fallback.jpg' : img;
+          const displayThumb = imageErrorMap[idx] ? DEMO_IMAGES.fallback : img;
           return (
             <button
               key={`${idx}-${img}`}
@@ -57,6 +58,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
                 src={displayThumb}
                 alt={`${productName} thumbnail ${idx + 1}`}
                 fill
+                sizes="80px"
                 className="object-cover"
                 onError={() => handleImageError(idx)}
               />

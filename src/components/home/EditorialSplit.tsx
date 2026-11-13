@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
+import { DEMO_IMAGES } from '@/config/images';
 
 export function EditorialSplit() {
   return (
@@ -16,9 +17,10 @@ export function EditorialSplit() {
             className="group relative h-[420px] sm:h-[520px] overflow-hidden rounded-md bg-stone-900 block"
           >
             <Image
-              src="/images/banners/editorial-oversized.jpg"
+              src={DEMO_IMAGES.tshirt}
               alt="Oversized Boxy Silhouette"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover object-center filter brightness-[0.8] transition-transform duration-700 ease-out group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex flex-col justify-end p-6 sm:p-10 text-white">
@@ -44,9 +46,10 @@ export function EditorialSplit() {
             className="group relative h-[420px] sm:h-[520px] overflow-hidden rounded-md bg-stone-900 block"
           >
             <Image
-              src="/images/banners/editorial-bottomwear.jpg"
+              src={DEMO_IMAGES.pants}
               alt="Tailored & Tactical Bottomwear"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover object-center filter brightness-[0.8] transition-transform duration-700 ease-out group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex flex-col justify-end p-6 sm:p-10 text-white">

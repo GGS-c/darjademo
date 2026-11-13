@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Sparkles, ArrowRight } from 'lucide-react';
+import { DEMO_IMAGES } from '@/config/images';
 
 export function BrandStory() {
   return (
@@ -63,17 +64,19 @@ export function BrandStory() {
           <div className="lg:col-span-5 grid grid-cols-2 gap-4">
             <div className="relative aspect-[3/4] rounded-md overflow-hidden bg-stone-900">
               <Image
-                src="/images/banners/brand-story-1.jpg"
+                src={DEMO_IMAGES.shirt}
                 alt="Darja menswear portrait"
                 fill
+                sizes="(max-width: 1024px) 50vw, 25vw"
                 className="object-cover"
               />
             </div>
             <div className="relative aspect-[3/4] rounded-md overflow-hidden bg-stone-900 translate-y-6">
               <Image
-                src="/images/banners/brand-story-2.jpg"
+                src={DEMO_IMAGES.banner}
                 alt="Darja editorial styling"
                 fill
+                sizes="(max-width: 1024px) 50vw, 25vw"
                 className="object-cover"
               />
             </div>

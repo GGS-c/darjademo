@@ -20,6 +20,7 @@ import { useAuth } from '@/context/AuthContext';
 import { useOrders } from '@/context/OrderContext';
 import { useWishlist } from '@/context/WishlistContext';
 import { formatPrice, formatDate } from '@/utils/formatters';
+import { DEMO_IMAGES, getSafeImage } from '@/config/images';
 
 type AccountTab = 'orders' | 'addresses' | 'profile';
 
@@ -270,7 +271,13 @@ export default function AccountPage() {
                           {order.items.map((item) => (
                             <div key={item.id} className="py-3 flex gap-4 items-center text-xs">
                               <div className="relative w-14 h-18 bg-stone-100 rounded overflow-hidden shrink-0 aspect-[3/4]">
-                                <Image src={item.image || '/images/fallback.jpg'} alt={item.name} fill className="object-cover" />
+                                <Image
+                                  src={getSafeImage(item.image) || DEMO_IMAGES.fallback}
+                                  alt={item.name}
+                                  fill
+                                  sizes="56px"
+                                  className="object-cover"
+                                />
                               </div>
                               <div className="flex-1 min-w-0">
                                 <h4 className="font-bold text-black truncate">{item.name}</h4>

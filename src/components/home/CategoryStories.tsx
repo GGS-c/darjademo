@@ -3,52 +3,54 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { DEMO_IMAGES } from '@/config/images';
 
 const STORIES = [
   {
     name: 'Oversized Tees',
     slug: 'oversized-t-shirts',
-    image: '/images/categories/story-oversized-tees.jpg',
+    image: DEMO_IMAGES.tshirt,
     badge: 'Trending',
   },
   {
     name: 'Plain Shirts',
     slug: 'plain-shirts',
-    image: '/images/categories/story-plain-shirts.jpg',
+    image: DEMO_IMAGES.shirt,
     badge: 'Popular',
   },
   {
     name: 'Parachute Cargos',
     slug: 'cargo-pants',
-    image: '/images/categories/story-parachute-cargos.jpg',
+    image: DEMO_IMAGES.pants,
     badge: 'Hot',
+  },
+  {
+    name: 'Kids Street',
+    slug: 'kids',
+    image: DEMO_IMAGES.kids,
+    badge: 'New',
   },
   {
     name: 'Baggy Jeans',
     slug: 'jeans',
-    image: '/images/categories/story-baggy-jeans.jpg',
-    badge: 'New',
+    image: DEMO_IMAGES.pants,
+    badge: 'Popular',
   },
   {
     name: 'Pleated Pants',
     slug: 'trousers',
-    image: '/images/categories/story-pleated-pants.jpg',
+    image: DEMO_IMAGES.pants,
     badge: 'Editorial',
   },
   {
     name: 'Knit Polos',
     slug: 'polo-t-shirts',
-    image: '/images/categories/story-knit-polos.jpg',
+    image: DEMO_IMAGES.tshirt,
   },
   {
-    name: 'Flannel Checks',
-    slug: 'checks-shirts',
-    image: '/images/categories/story-flannel-checks.jpg',
-  },
-  {
-    name: 'Linen Resort',
-    slug: 'shorts',
-    image: '/images/categories/story-linen-resort.jpg',
+    name: 'Linen Edits',
+    slug: 'shirts',
+    image: DEMO_IMAGES.banner,
   },
 ];
 
@@ -63,12 +65,13 @@ export function CategoryStories() {
               href={`/category/${story.slug}`}
               className="flex flex-col items-center shrink-0 group"
             >
-              <div className="relative w-18 h-18 sm:w-20 sm:h-20 rounded-full p-[2px] bg-gradient-to-tr from-stone-900 via-stone-400 to-stone-900 group-hover:scale-105 transition-transform duration-300">
+              <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full p-[2px] bg-gradient-to-tr from-stone-900 via-stone-400 to-stone-900 group-hover:scale-105 transition-transform duration-300">
                 <div className="relative w-full h-full rounded-full overflow-hidden bg-stone-100 border-2 border-white">
                   <Image
                     src={story.image}
                     alt={story.name}
                     fill
+                    sizes="80px"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
@@ -78,7 +81,7 @@ export function CategoryStories() {
                   </span>
                 )}
               </div>
-              <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-stone-800 uppercase mt-2 group-hover:text-black text-center">
+              <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-stone-800 uppercase mt-2 group-hover:text-black text-center whitespace-nowrap">
                 {story.name}
               </span>
             </Link>

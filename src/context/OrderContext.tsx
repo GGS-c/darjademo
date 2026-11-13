@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Order } from '@/types';
+import { DEMO_IMAGES, getSafeImage } from '@/config/images';
 
 interface OrderContextType {
   orders: Order[];
@@ -25,7 +26,7 @@ const INITIAL_ORDERS: Order[] = [
         color: 'Obsidian Black',
         size: 'L',
         quantity: 1,
-        image: '/images/products/darja-sh-01-black-1.jpg',
+        image: DEMO_IMAGES.shirt,
         maxStock: 15,
       },
       {
@@ -38,7 +39,7 @@ const INITIAL_ORDERS: Order[] = [
         color: 'Pitch Black',
         size: 'L',
         quantity: 1,
-        image: '/images/products/darja-ts-01-obsidian-1.jpg',
+        image: DEMO_IMAGES.tshirt,
         maxStock: 25,
       },
     ],
@@ -78,7 +79,7 @@ const INITIAL_ORDERS: Order[] = [
         color: 'Vapour Grey Wash',
         size: 'L',
         quantity: 1,
-        image: '/images/products/darja-bw-01-grey-1.jpg',
+        image: DEMO_IMAGES.pants,
         maxStock: 20,
       },
     ],
@@ -114,7 +115,15 @@ export function OrderProvider({ children }: { children: React.ReactNode }) {
     try {
       const saved = localStorage.getItem('darja_orders');
       if (saved) {
-        setOrders(JSON.parse(saved));
+        const parsed: Order[] = JSON.parse(saved);
+        const sanitized = parsed.map((ord) => ({
+          ...ord,
+          items: ord.items.map((it) => ({
+            ...it,
+            image: getSafeImage(it.image),
+          })),
+        }));
+        setOrders(sanitized);
       }
     } catch {
       // Ignore

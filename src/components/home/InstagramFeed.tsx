@@ -3,27 +3,28 @@
 import React from 'react';
 import Image from 'next/image';
 import { Instagram } from 'lucide-react';
+import { DEMO_IMAGES } from '@/config/images';
 
 const COMMUNITY_POSTS = [
   {
-    image: '/images/banners/lookbook-1.jpg',
+    image: DEMO_IMAGES.shirt,
     handle: '@arjun.mehta',
     product: 'Minimalist Oxford Shirt',
   },
   {
-    image: '/images/banners/lookbook-2.jpg',
+    image: DEMO_IMAGES.tshirt,
     handle: '@kabir_v',
     product: 'Phantom 260 GSM Heavy Tee',
   },
   {
-    image: '/images/banners/lookbook-3.jpg',
+    image: DEMO_IMAGES.pants,
     handle: '@rohan_style',
     product: 'Tokyo Pleated Trousers',
   },
   {
-    image: '/images/banners/lookbook-4.jpg',
+    image: DEMO_IMAGES.kids,
     handle: '@dev.sharma',
-    product: 'Textured Waffle Overshirt',
+    product: 'Youth Street Atelier',
   },
 ];
 
@@ -53,12 +54,13 @@ export function InstagramFeed() {
                 src={post.image}
                 alt={post.product}
                 fill
+                sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-white text-center">
                 <Instagram className="w-6 h-6 mb-2" />
                 <span className="text-xs font-bold tracking-wider">{post.handle}</span>
-                <span className="text-[10px] text-stone-300 mt-1">{post.product}</span>
+                <span className="text-[10px] text-stone-300 mt-1 uppercase tracking-widest">{post.product}</span>
               </div>
             </div>
           ))}

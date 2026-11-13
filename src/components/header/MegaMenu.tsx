@@ -128,6 +128,7 @@ export function MegaMenu({ category, isOpen, onClose }: MegaMenuProps) {
               src={category.bannerImage}
               alt={category.name}
               fill
+              sizes="(max-width: 1280px) 300px, 400px"
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-5 text-white">

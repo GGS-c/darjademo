@@ -21,6 +21,7 @@ import { useCart } from '@/context/CartContext';
 import { useOrders } from '@/context/OrderContext';
 import { useAuth } from '@/context/AuthContext';
 import { formatPrice } from '@/utils/formatters';
+import { DEMO_IMAGES, getSafeImage } from '@/config/images';
 import { Order } from '@/types';
 
 type PaymentMethodType = 'upi' | 'card' | 'cod' | 'netbanking';
@@ -141,7 +142,13 @@ export default function CheckoutPage() {
                 {confirmedOrder.items.map((item) => (
                   <div key={item.id} className="p-3.5 flex gap-3 items-center">
                     <div className="relative w-14 h-18 bg-stone-100 rounded overflow-hidden shrink-0 aspect-[3/4]">
-                      <Image src={item.image || '/images/fallback.jpg'} alt={item.name} fill className="object-cover" />
+                      <Image
+                        src={getSafeImage(item.image) || DEMO_IMAGES.fallback}
+                        alt={item.name}
+                        fill
+                        sizes="56px"
+                        className="object-cover"
+                      />
                     </div>
                     <div className="flex-1 min-w-0">
                       <h5 className="text-xs font-bold text-black truncate">{item.name}</h5>
@@ -497,7 +504,13 @@ export default function CheckoutPage() {
                 {cart.map((item) => (
                   <div key={item.id} className="flex gap-3 items-center text-xs">
                     <div className="relative w-12 h-16 bg-stone-100 rounded overflow-hidden shrink-0 aspect-[3/4]">
-                      <Image src={item.image || '/images/fallback.jpg'} alt={item.name} fill className="object-cover" />
+                      <Image
+                        src={getSafeImage(item.image) || DEMO_IMAGES.fallback}
+                        alt={item.name}
+                        fill
+                        sizes="48px"
+                        className="object-cover"
+                      />
                     </div>
                     <div className="flex-1 min-w-0">
                       <h5 className="font-semibold text-black truncate">{item.name}</h5>

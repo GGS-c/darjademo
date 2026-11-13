@@ -8,6 +8,7 @@ import { Product } from '@/types';
 import { useWishlist } from '@/context/WishlistContext';
 import { useCart } from '@/context/CartContext';
 import { formatPrice } from '@/utils/formatters';
+import { DEMO_IMAGES } from '@/config/images';
 
 interface ProductCardProps {
   product: Product;
@@ -32,11 +33,11 @@ export function ProductCard({ product }: ProductCardProps) {
     setSecondaryErr(false);
   }, [activeVariantIndex]);
 
-  const rawPrimary = activeVariant.images[0] || '/images/fallback.jpg';
+  const rawPrimary = activeVariant.images[0] || DEMO_IMAGES.fallback;
   const rawSecondary = activeVariant.images[1] || rawPrimary;
 
-  const primaryImage = primaryErr ? '/images/fallback.jpg' : rawPrimary;
-  const secondaryImage = secondaryErr ? '/images/fallback.jpg' : rawSecondary;
+  const primaryImage = primaryErr ? DEMO_IMAGES.fallback : rawPrimary;
+  const secondaryImage = secondaryErr ? DEMO_IMAGES.fallback : rawSecondary;
 
   const handleQuickAdd = (size: 'S' | 'M' | 'L' | 'XL' | 'XXL', e: React.MouseEvent) => {
     e.preventDefault();
@@ -206,7 +207,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </Link>
 
         {/* Pricing */}
-        <div className="flex items-center gap-2 mt-1.5">
+        <div className="flex flex-wrap items-baseline gap-1.5 sm:gap-2 mt-1.5">
           <span className="text-sm font-bold text-black font-mono">
             {formatPrice(product.price)}
           </span>
@@ -215,7 +216,7 @@ export function ProductCard({ product }: ProductCardProps) {
               <span className="text-xs text-stone-400 line-through font-mono">
                 {formatPrice(product.originalPrice)}
               </span>
-              <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1 py-0.2 rounded">
+              <span className="text-[9px] sm:text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1 py-0.5 rounded whitespace-nowrap">
                 ({product.discountPercentage}% OFF)
               </span>
             </>

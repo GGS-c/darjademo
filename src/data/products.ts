@@ -1,4 +1,5 @@
 import { Product } from '@/types';
+import { DEMO_IMAGES } from '@/config/images';
 
 export const PRODUCTS: Product[] = [
   // ===================== SHIRTS =====================
@@ -37,28 +38,19 @@ export const PRODUCTS: Product[] = [
       {
         colorName: 'Obsidian Black',
         colorHex: '#0f0f11',
-        images: [
-        '/images/products/darja-ts-01-obsidian-1.jpg',
-        '/images/products/darja-ts-01-obsidian-2.jpg',
-      ],
+        images: [DEMO_IMAGES.shirt, DEMO_IMAGES.banner],
         stockBySize: { S: 8, M: 14, L: 19, XL: 6, XXL: 3 },
       },
       {
         colorName: 'Alabaster Chalk',
         colorHex: '#f3f4f6',
-        images: [
-        '/images/products/darja-sh-01-chalk-1.jpg',
-        '/images/products/darja-sh-01-chalk-2.jpg',
-      ],
+        images: [DEMO_IMAGES.shirt, DEMO_IMAGES.banner],
         stockBySize: { S: 4, M: 12, L: 10, XL: 5, XXL: 0 },
       },
       {
         colorName: 'Deep Navy',
         colorHex: '#1e293b',
-        images: [
-        '/images/products/darja-sh-01-navy-1.jpg',
-        '/images/products/darja-sh-01-navy-2.jpg',
-      ],
+        images: [DEMO_IMAGES.shirt, DEMO_IMAGES.banner],
         stockBySize: { S: 6, M: 9, L: 15, XL: 8, XXL: 2 },
       },
     ],
@@ -98,19 +90,13 @@ export const PRODUCTS: Product[] = [
       {
         colorName: 'Charcoal & Off-White',
         colorHex: '#374151',
-        images: [
-        '/images/products/darja-sh-02-charcoal-1.jpg',
-        '/images/products/darja-sh-02-charcoal-2.jpg',
-      ],
+        images: [DEMO_IMAGES.shirt, DEMO_IMAGES.banner],
         stockBySize: { S: 12, M: 18, L: 15, XL: 7, XXL: 4 },
       },
       {
         colorName: 'Midnight Sage',
         colorHex: '#2d3748',
-        images: [
-        '/images/products/darja-sh-02-sage-1.jpg',
-        '/images/products/darja-sh-02-sage-2.jpg',
-      ],
+        images: [DEMO_IMAGES.shirt, DEMO_IMAGES.banner],
         stockBySize: { S: 5, M: 8, L: 12, XL: 3, XXL: 0 },
       },
     ],
@@ -149,10 +135,7 @@ export const PRODUCTS: Product[] = [
       {
         colorName: 'Monochrome Noir',
         colorHex: '#18181b',
-        images: [
-        '/images/products/darja-sh-03-noir-1.jpg',
-        '/images/products/darja-sh-03-noir-2.jpg',
-      ],
+        images: [DEMO_IMAGES.shirt, DEMO_IMAGES.banner],
         stockBySize: { S: 7, M: 15, L: 20, XL: 9, XXL: 4 },
       },
     ],
@@ -190,10 +173,7 @@ export const PRODUCTS: Product[] = [
       {
         colorName: 'Ecru & Slate Stripe',
         colorHex: '#9ca3af',
-        images: [
-        '/images/products/darja-sh-04-slate-1.jpg',
-        '/images/products/darja-sh-04-slate-2.jpg',
-      ],
+        images: [DEMO_IMAGES.shirt, DEMO_IMAGES.banner],
         stockBySize: { S: 10, M: 16, L: 14, XL: 6, XXL: 1 },
       },
     ],
@@ -227,19 +207,13 @@ export const PRODUCTS: Product[] = [
       {
         colorName: 'Sandstone Beige',
         colorHex: '#d1bca5',
-        images: [
-        '/images/products/darja-sh-05-sandstone-1.jpg',
-        '/images/products/darja-sh-05-sandstone-2.jpg',
-      ],
+        images: [DEMO_IMAGES.shirt, DEMO_IMAGES.banner],
         stockBySize: { S: 6, M: 11, L: 14, XL: 8, XXL: 2 },
       },
       {
         colorName: 'Washed Olive',
         colorHex: '#556b2f',
-        images: [
-        '/images/products/darja-sh-05-olive-1.jpg',
-        '/images/products/darja-sh-05-olive-2.jpg',
-      ],
+        images: [DEMO_IMAGES.shirt, DEMO_IMAGES.banner],
         stockBySize: { S: 3, M: 7, L: 9, XL: 4, XXL: 0 },
       },
     ],
@@ -272,19 +246,13 @@ export const PRODUCTS: Product[] = [
       {
         colorName: 'Crisp White',
         colorHex: '#ffffff',
-        images: [
-        '/images/products/darja-sh-06-white-1.jpg',
-        '/images/products/darja-sh-06-white-2.jpg',
-      ],
+        images: [DEMO_IMAGES.shirt, DEMO_IMAGES.banner],
         stockBySize: { S: 9, M: 22, L: 18, XL: 10, XXL: 5 },
       },
       {
         colorName: 'Powder Sky Blue',
         colorHex: '#bfdbfe',
-        images: [
-        '/images/products/darja-sh-06-blue-1.jpg',
-        '/images/products/darja-sh-06-blue-2.jpg',
-      ],
+        images: [DEMO_IMAGES.shirt, DEMO_IMAGES.banner],
         stockBySize: { S: 4, M: 12, L: 14, XL: 6, XXL: 1 },
       },
     ],
@@ -319,10 +287,7 @@ export const PRODUCTS: Product[] = [
       {
         colorName: 'Muted Concrete',
         colorHex: '#6b7280',
-        images: [
-          '/images/products/darja-sh-07-black-1.jpg',
-          '/images/products/darja-sh-07-olive-2.jpg',
-        ],
+        images: [DEMO_IMAGES.shirt, DEMO_IMAGES.banner],
         stockBySize: { S: 10, M: 19, L: 25, XL: 12, XXL: 4 },
       },
     ],
@@ -365,28 +330,19 @@ export const PRODUCTS: Product[] = [
       {
         colorName: 'Pitch Black',
         colorHex: '#09090b',
-        images: [
-        '/images/products/darja-ts-02-black-1.jpg',
-        '/images/products/darja-ts-02-black-2.jpg',
-      ],
+        images: [DEMO_IMAGES.tshirt, DEMO_IMAGES.banner],
         stockBySize: { S: 15, M: 30, L: 28, XL: 14, XXL: 8 },
       },
       {
         colorName: 'Bone White',
         colorHex: '#f5f5f4',
-        images: [
-          '/images/products/darja-ts-01-bone-1.jpg',
-          '/images/products/darja-ts-01-bone-2.jpg',
-        ],
+        images: [DEMO_IMAGES.tshirt, DEMO_IMAGES.banner],
         stockBySize: { S: 11, M: 24, L: 20, XL: 9, XXL: 5 },
       },
       {
         colorName: 'Washed Stone',
         colorHex: '#a8a29e',
-        images: [
-          '/images/products/darja-ts-01-taupe-1.jpg',
-          '/images/products/darja-ts-01-taupe-2.jpg',
-        ],
+        images: [DEMO_IMAGES.tshirt, DEMO_IMAGES.banner],
         stockBySize: { S: 8, M: 16, L: 15, XL: 6, XXL: 2 },
       },
     ],
@@ -420,19 +376,13 @@ export const PRODUCTS: Product[] = [
       {
         colorName: 'Pure White',
         colorHex: '#ffffff',
-        images: [
-          '/images/products/darja-ts-02-white-1.jpg',
-          '/images/products/darja-ts-02-white-2.jpg',
-        ],
+        images: [DEMO_IMAGES.tshirt, DEMO_IMAGES.banner],
         stockBySize: { S: 20, M: 35, L: 40, XL: 18, XXL: 6 },
       },
       {
         colorName: 'Charcoal Black',
         colorHex: '#18181b',
-        images: [
-          '/images/products/darja-ts-02-black-1.jpg',
-          '/images/products/darja-ts-02-black-2.jpg',
-        ],
+        images: [DEMO_IMAGES.tshirt, DEMO_IMAGES.banner],
         stockBySize: { S: 14, M: 25, L: 28, XL: 10, XXL: 4 },
       },
     ],
@@ -467,10 +417,7 @@ export const PRODUCTS: Product[] = [
       {
         colorName: 'Washed Acid Charcoal',
         colorHex: '#27272a',
-        images: [
-          '/images/products/darja-ts-03-cyberpunk-1.jpg',
-          '/images/products/darja-ts-03-cyberpunk-2.jpg',
-        ],
+        images: [DEMO_IMAGES.tshirt, DEMO_IMAGES.banner],
         stockBySize: { S: 7, M: 16, L: 20, XL: 8, XXL: 2 },
       },
     ],
@@ -504,19 +451,13 @@ export const PRODUCTS: Product[] = [
       {
         colorName: 'Sand Beige',
         colorHex: '#d6d3d1',
-        images: [
-          '/images/products/darja-ts-04-cream-1.jpg',
-          '/images/products/darja-ts-04-cream-2.jpg',
-        ],
+        images: [DEMO_IMAGES.tshirt, DEMO_IMAGES.banner],
         stockBySize: { S: 9, M: 18, L: 22, XL: 7, XXL: 3 },
       },
       {
         colorName: 'Jet Black',
         colorHex: '#000000',
-        images: [
-        '/images/products/darja-ts-04-black-1.jpg',
-        '/images/products/darja-ts-04-black-2.jpg',
-      ],
+        images: [DEMO_IMAGES.tshirt, DEMO_IMAGES.banner],
         stockBySize: { S: 12, M: 25, L: 30, XL: 11, XXL: 5 },
       },
     ],
@@ -550,10 +491,7 @@ export const PRODUCTS: Product[] = [
       {
         colorName: 'Off-White',
         colorHex: '#f4f4f5',
-        images: [
-        '/images/products/darja-ts-05-white-1.jpg',
-        '/images/products/darja-ts-05-white-2.jpg',
-      ],
+        images: [DEMO_IMAGES.tshirt, DEMO_IMAGES.banner],
         stockBySize: { S: 14, M: 26, L: 22, XL: 9, XXL: 4 },
       },
     ],
@@ -586,10 +524,7 @@ export const PRODUCTS: Product[] = [
       {
         colorName: 'Smoke Grey Marble',
         colorHex: '#71717a',
-        images: [
-        '/images/products/darja-ts-06-marble-1.jpg',
-        '/images/products/darja-ts-06-marble-2.jpg',
-      ],
+        images: [DEMO_IMAGES.tshirt, DEMO_IMAGES.banner],
         stockBySize: { S: 6, M: 14, L: 12, XL: 4, XXL: 0 },
       },
     ],
@@ -631,19 +566,13 @@ export const PRODUCTS: Product[] = [
       {
         colorName: 'Vapour Grey Wash',
         colorHex: '#64748b',
-        images: [
-        '/images/products/darja-bw-01-grey-1.jpg',
-        '/images/products/darja-bw-01-grey-2.jpg',
-      ],
+        images: [DEMO_IMAGES.pants, DEMO_IMAGES.shirt],
         stockBySize: { S: 10, M: 20, L: 25, XL: 12, XXL: 5 },
       },
       {
         colorName: 'Raw Deep Indigo',
         colorHex: '#1e3a8a',
-        images: [
-        '/images/products/darja-bw-01-indigo-1.jpg',
-        '/images/products/darja-bw-01-indigo-2.jpg',
-      ],
+        images: [DEMO_IMAGES.pants, DEMO_IMAGES.shirt],
         stockBySize: { S: 7, M: 15, L: 19, XL: 8, XXL: 3 },
       },
     ],
@@ -676,19 +605,13 @@ export const PRODUCTS: Product[] = [
       {
         colorName: 'Onyx Black',
         colorHex: '#111827',
-        images: [
-        '/images/products/darja-bw-02-black-1.jpg',
-        '/images/products/darja-bw-02-black-2.jpg',
-      ],
+        images: [DEMO_IMAGES.pants, DEMO_IMAGES.shirt],
         stockBySize: { S: 12, M: 25, L: 30, XL: 14, XXL: 6 },
       },
       {
         colorName: 'Taupe Khaki',
         colorHex: '#a3a3a3',
-        images: [
-        '/images/products/darja-bw-02-taupe-1.jpg',
-        '/images/products/darja-bw-02-taupe-2.jpg',
-      ],
+        images: [DEMO_IMAGES.pants, DEMO_IMAGES.shirt],
         stockBySize: { S: 8, M: 16, L: 18, XL: 9, XXL: 2 },
       },
     ],
@@ -722,19 +645,13 @@ export const PRODUCTS: Product[] = [
       {
         colorName: 'Stealth Black',
         colorHex: '#0f172a',
-        images: [
-        '/images/products/darja-bw-03-black-1.jpg',
-        '/images/products/darja-bw-03-black-2.jpg',
-      ],
+        images: [DEMO_IMAGES.pants, DEMO_IMAGES.shirt],
         stockBySize: { S: 14, M: 28, L: 35, XL: 16, XXL: 7 },
       },
       {
         colorName: 'Combat Olive',
         colorHex: '#3f4e3c',
-        images: [
-        '/images/products/darja-bw-03-olive-1.jpg',
-        '/images/products/darja-bw-03-olive-2.jpg',
-      ],
+        images: [DEMO_IMAGES.pants, DEMO_IMAGES.shirt],
         stockBySize: { S: 9, M: 18, L: 20, XL: 7, XXL: 1 },
       },
     ],
@@ -766,10 +683,7 @@ export const PRODUCTS: Product[] = [
       {
         colorName: 'Heather Ash Grey',
         colorHex: '#9ca3af',
-        images: [
-        '/images/products/darja-bw-04-grey-1.jpg',
-        '/images/products/darja-bw-04-grey-2.jpg',
-      ],
+        images: [DEMO_IMAGES.pants, DEMO_IMAGES.shirt],
         stockBySize: { S: 10, M: 22, L: 20, XL: 11, XXL: 4 },
       },
     ],
@@ -801,13 +715,137 @@ export const PRODUCTS: Product[] = [
       {
         colorName: 'Natural Oatmeal',
         colorHex: '#e5e5e5',
-        images: [
-        '/images/products/darja-bw-05-oatmeal-1.jpg',
-        '/images/products/darja-bw-05-oatmeal-2.jpg',
-      ],
+        images: [DEMO_IMAGES.pants, DEMO_IMAGES.shirt],
         stockBySize: { S: 8, M: 16, L: 19, XL: 6, XXL: 2 },
       },
     ],
     tags: ['shorts', 'linen', 'resort', 'vacation'],
+  },
+
+  // ===================== KIDS & YOUTH COLLECTION =====================
+  {
+    id: 'darja-kd-01',
+    slug: 'junior-relaxed-linen-shirt',
+    name: 'Junior Relaxed Linen Blend Shirt',
+    tagline: 'Lightweight breathable resort cut for young gentlemen',
+    category: 'kids',
+    subcategory: 'kids-shirts',
+    price: 1199,
+    originalPrice: 1999,
+    discountPercentage: 40,
+    isNewArrival: true,
+    isBestSeller: true,
+    isTrending: true,
+    rating: 4.8,
+    reviewCount: 56,
+    description: 'Designed for comfort and effortless occasion styling. Cut from breathable pre-shrunk cotton-linen blend with soft interlining that feels gentle on young skin.',
+    fabric: '60% Linen, 40% Combed Cotton',
+    careInstructions: ['Machine wash cold gentle', 'Do not bleach', 'Warm iron'],
+    specifications: {
+      fit: 'Relaxed Junior Fit',
+      collar: 'Cuban Open Collar',
+      sleeve: 'Short Sleeve',
+      pattern: 'Textured Slub',
+      modelHeight: "4'8\"",
+      modelSizeWorn: 'M',
+    },
+    variants: [
+      {
+        colorName: 'Sage Green',
+        colorHex: '#738678',
+        images: [DEMO_IMAGES.kids, DEMO_IMAGES.banner],
+        stockBySize: { S: 12, M: 20, L: 18, XL: 10, XXL: 5 },
+      },
+      {
+        colorName: 'Crisp Chalk',
+        colorHex: '#f5f5f4',
+        images: [DEMO_IMAGES.kids, DEMO_IMAGES.banner],
+        stockBySize: { S: 10, M: 15, L: 14, XL: 8, XXL: 3 },
+      },
+    ],
+    tags: ['kids', 'junior', 'linen', 'summer'],
+  },
+  {
+    id: 'darja-kd-02',
+    slug: 'kids-heavyweight-boxy-street-tee',
+    name: 'Kids Heavyweight Boxy Street Tee',
+    tagline: '220 GSM Bio-washed pure cotton drop-shoulder tee',
+    category: 'kids',
+    subcategory: 'kids-t-shirts',
+    price: 799,
+    originalPrice: 1499,
+    discountPercentage: 47,
+    isNewArrival: true,
+    isBestSeller: true,
+    isTrending: true,
+    rating: 4.9,
+    reviewCount: 82,
+    description: 'Urban street silhouette tailored for youth. Featuring a sturdy 1.25\" rib crewneck, reinforced double stitching, and high-density minimal front typography.',
+    fabric: '100% Super-Combed Cotton (220 GSM), Bio-washed',
+    careInstructions: ['Cold wash inside out', 'Flat dry in shade'],
+    specifications: {
+      fit: 'Drop Shoulder Boxy',
+      neck: 'Ribbed Crewneck',
+      sleeve: 'Quarter Length Relaxed Sleeve',
+      pattern: 'Minimal Editorial Typo',
+      modelHeight: "4'9\"",
+      modelSizeWorn: 'M',
+    },
+    variants: [
+      {
+        colorName: 'Obsidian Black',
+        colorHex: '#121214',
+        images: [DEMO_IMAGES.kids, DEMO_IMAGES.banner],
+        stockBySize: { S: 15, M: 25, L: 20, XL: 12, XXL: 6 },
+      },
+      {
+        colorName: 'Washed Clay',
+        colorHex: '#c7b299',
+        images: [DEMO_IMAGES.kids, DEMO_IMAGES.banner],
+        stockBySize: { S: 10, M: 18, L: 15, XL: 9, XXL: 4 },
+      },
+    ],
+    tags: ['kids', 'junior', 'oversized', 'streetwear', 'boxy'],
+  },
+  {
+    id: 'darja-kd-03',
+    slug: 'youth-tactical-parachute-cargo-pants',
+    name: 'Youth Tactical Parachute Cargo Pants',
+    tagline: 'Multi-pocket utility pants with elasticated cord waistband',
+    category: 'kids',
+    subcategory: 'kids-bottomwear',
+    price: 1499,
+    originalPrice: 2599,
+    discountPercentage: 42,
+    isNewArrival: true,
+    isBestSeller: false,
+    isTrending: true,
+    rating: 4.8,
+    reviewCount: 43,
+    description: 'Utilitarian street styling engineered for youth agility. Includes 6 functional pockets, elastic cord lock cuffs, and ripstop cotton weave that withstands active days.',
+    fabric: '100% Ripstop Cotton Twill (240 GSM)',
+    careInstructions: ['Machine wash cold', 'Tumble dry low'],
+    specifications: {
+      fit: 'Relaxed Parachute Utility',
+      sleeve: 'N/A',
+      pattern: 'Solid Tactical Twill',
+      modelHeight: "4'9\"",
+      modelSizeWorn: 'M',
+    },
+    variants: [
+      {
+        colorName: 'Military Olive',
+        colorHex: '#4a5342',
+        images: [DEMO_IMAGES.kids, DEMO_IMAGES.pants],
+        stockBySize: { S: 10, M: 16, L: 14, XL: 8, XXL: 3 },
+      },
+      {
+        colorName: 'Carbon Grey',
+        colorHex: '#2b2d30',
+        images: [DEMO_IMAGES.kids, DEMO_IMAGES.pants],
+        stockBySize: { S: 8, M: 14, L: 12, XL: 6, XXL: 2 },
+      },
+    ],
+    tags: ['kids', 'junior', 'cargo', 'parachute', 'tactical'],
   },
 ];

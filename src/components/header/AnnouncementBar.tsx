@@ -24,24 +24,24 @@ export function AnnouncementBar() {
   const current = MESSAGES[currentIndex];
 
   return (
-    <div className="bg-black text-white py-2 px-4 text-xs font-medium tracking-wider uppercase transition-all duration-300 border-b border-stone-800">
+    <div className="bg-black text-white py-1.5 sm:py-2 px-2.5 sm:px-4 text-[10px] sm:text-xs font-medium tracking-wider uppercase transition-all duration-300 border-b border-stone-800 overflow-hidden">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="hidden md:flex items-center space-x-4 text-stone-400 text-[11px] tracking-widest">
+        <div className="hidden lg:flex items-center space-x-4 text-stone-400 text-[11px] tracking-widest shrink-0">
           <span>MEN&apos;S COUTURE & LUXURY STREETWEAR</span>
         </div>
 
         <Link
           href={current.href}
-          className="mx-auto flex items-center justify-center gap-2 group hover:text-stone-300 transition-colors"
+          className="mx-auto flex items-center justify-center gap-1.5 sm:gap-2 group hover:text-stone-300 transition-colors max-w-full min-w-0"
         >
-          <span className="font-semibold text-white tracking-widest">{current.text}</span>
-          <span className="bg-white/10 text-stone-200 px-2 py-0.5 rounded text-[10px] tracking-normal font-mono">
+          <span className="font-semibold text-white tracking-wider sm:tracking-widest truncate">{current.text}</span>
+          <span className="bg-white/10 text-stone-200 px-1.5 py-0.5 rounded text-[9px] sm:text-[10px] font-mono shrink-0">
             {current.code}
           </span>
-          <ChevronRight className="w-3.5 h-3.5 text-stone-400 group-hover:translate-x-0.5 transition-transform" />
+          <ChevronRight className="w-3.5 h-3.5 text-stone-400 group-hover:translate-x-0.5 transition-transform shrink-0" />
         </Link>
 
-        <div className="hidden md:flex items-center space-x-3 text-stone-400 text-[11px]">
+        <div className="hidden md:flex items-center space-x-3 text-stone-400 text-[11px] shrink-0">
           <Link href="/track-order" className="hover:text-white transition-colors">
             TRACK ORDER
           </Link>

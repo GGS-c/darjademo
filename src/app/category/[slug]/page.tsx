@@ -51,6 +51,9 @@ export default function CategoryPage() {
   } else if (slug === 'sale') {
     pageTitle = 'END OF SEASON SALE';
     pageDescription = 'Up to 50% off on signature seasonal menswear pieces. While stocks last.';
+  } else if (slug === 'kids-collection' || slug === 'kids') {
+    pageTitle = 'KIDS & YOUTH COLLECTION';
+    pageDescription = 'Youth and junior street apparel designed with relaxed boxy cuts and premium soft-touch cotton.';
   } else if (currentCategory) {
     pageTitle = currentCategory.name;
     pageDescription = currentCategory.description;
@@ -69,6 +72,8 @@ export default function CategoryPage() {
         if (!product.isBestSeller) return false;
       } else if (slug === 'sale') {
         if (product.discountPercentage < 40) return false;
+      } else if (slug === 'kids-collection' || slug === 'kids') {
+        if (product.category !== 'kids') return false;
       } else if (currentCategory) {
         if (product.category !== currentCategory.id) return false;
       } else if (currentSubcategory) {
